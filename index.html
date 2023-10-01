@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xtreinox</title>
+    <style>
+        body{
+            background-color:rgb(247, 241, 234);
+        }
+        header{
+            padding:3%;
+            background-color: #1a4b30;
+		    box-shadow: 4px 4px 8px black;
+           
+        }
+        h1{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-align: center;
+            color: aliceblue;
+            margin-top: 0%;
+            
+        }
+        .desch1{
+            font-family:Arial, Helvetica, sans-serif;
+            text-align: left;
+            font-weight: bold;
+            font-size: 200%;
+            color: rgb(3, 3, 3);
+            margin-top: 0%;
+        }
+        p{
+            font-size: larger;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            font-size: x-large;
+            padding-top: 3%;
+            
+        }
+        nav{
+            padding: 2%;
+            
+        }
+        .meubotao{
+        font-size: larger;
+        text-align: center;
+        padding: 10px 0px; /* Ajuste a largura e altura do botão conforme necessário */
+        color: antiquewhite;
+        background-color: #1a4b30;
+        box-shadow: 4px 4px 8px black;
+        align-items: center;
+        justify-content: center;
+        border-radius:5px;
+        margin: auto;
+		width: 99%;
+
+        }
+        .conteudo{
+            display: flex;
+
+        }
+        aside{
+            background-color: rgb(33, 95, 209);
+            color: aliceblue;
+            font-family: Arial, Helvetica, sans-serif;
+            flex:1;
+            padding: 50px;
+            margin: 1%;
+            border-radius:15px;
+        }
+        section{
+            background-color: rgb(214, 207, 219);
+            font-family: Arial, Helvetica, sans-serif;
+            flex:2;
+            padding: 50px;
+            margin: 1%;
+            border-radius:25px;
+            display: flex;
+            align-items: center;
+
+
+        }
+        .gif{
+            flex:3;
+           background-color: black;
+            border-radius: 5%;
+            padding: 5%;
+            margin: 5%;
+			width: 100%;
+        }
+        .txt{
+            flex:1;
+            background-color: rgba(231, 227, 219, 0.966);
+            box-shadow: 4px 4px 8px black;
+            border-radius: 5%;
+            padding: 5%;
+            margin: 5%;
+
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ficha de Treino</h1>
+    </header>
+    <nav>
+        <button class="meubotao" onclick="perna()"><strong>Perna</strong></button>
+        <button class="meubotao" onclick="Ombro()"><strong>Ombro</strong></button>
+        <button class="meubotao" onclick="BicpsCostas()"><strong>Biceps / Costas</strong></button>
+        <button class="meubotao" onclick="PeitoTricp()"><strong>Peito / Triceps</strong></button>
+        <button class="meubotao" onclick="perna()"><strong>Perna</strong></button>
+        
+    </nav>
+<div class="conteudo">
+    <aside id="listadetreino">
+        <div id="Lperna" style="display:none;">
+            <button class="meubotao" onclick="agchlv()"><strong>AGACHAMENTO LIVRE</strong></button>
+            <button class="meubotao" onclick="elevpelc()"><strong>ELEVAÇÃO PELVICA</strong></button>
+            <button class="meubotao" onclick="legpress()"><strong>LEG PRESS</strong></button>
+            <button class="meubotao" onclick="agchafundsmt()"><strong>AGACHAMENTO AFUNDO NO SMITH</strong></button>
+            <button class="meubotao" onclick="cdrextns()"><strong>CADEIRA EXTENSORA</strong></button>
+            <button class="meubotao" onclick="hckmch()"><strong>HACK MACHINE</strong></button>
+            <button class="meubotao" onclick="pantu()"><strong>PANTURRILHA</strong></button>
+            <button class="meubotao" onclick="aduto()"><strong>ADUTORA</strong></button>
+            <button class="meubotao" onclick="abduto()"><strong>ABDUTORA</strong></button>
+
+        </div>
+        <div id="Lombro" style="display:none ;">
+            <button class="meubotao" onclick="remdesv()"><strong>REMADA ALTA + DESENVOLVIMENTO COMPLETO</strong></button>
+            <button class="meubotao" onclick="elevlat()"><strong>ELEVAÇÃO LATERAL</strong></button>
+            <button class="meubotao" onclick="elevfront()"><strong>ELEVAÇÃO FRONTAL</strong></button>
+            <button class="meubotao" onclick="postbanc()"><strong>POSTERIOR BANCO</strong></button>
+            <button class="meubotao" onclick="postpkdk()"><strong>POSTERIOR PACKDEKC</strong></button>
+        </div>
+        <div id="Lbicpscosta"style="display:none ;">
+            <button class="meubotao" onclick="roscadirtbrr()"><strong>ROSCA DIRETA BARRA</strong></button>
+            <button class="meubotao" onclick="roscamartbrr()"><strong>ROSCA INVERSA BARRA</strong></button>
+            <button class="meubotao" onclick="roscaalthalt()"><strong>ROSCA ALTERNADA HALTER</strong></button>
+            <button class="meubotao" onclick="roscamarthalt()"><strong>ROSCA MARTELO HALTER</strong></button>
+            <button class="meubotao" onclick="remadcav()"><strong>REMADA CAVALINHO</strong></button>
+            <button class="meubotao" onclick="remadaart()"><strong>REMADA ARTICULADA</strong></button>
+            <button class="meubotao" onclick="puxdfrt()"><strong>PUXADOR FRENTE</strong></button>
+            <button class="meubotao" onclick="remadcurv()"><strong>REMADA CURVADA</strong></button>
+        </div>
+        <div id="Lpeitotricp" style="display: none ;">
+            <button class="meubotao" onclick=" supret()"><strong>SUPINO RETO</strong></button>
+            <button class="meubotao" onclick=" crux()"><strong>CRUSIFIXO</strong></button>
+            <button class="meubotao" onclick=" supinc()"><strong>SUPINO INCLINADO</strong></button>
+            <button class="meubotao" onclick=" cruxinc()"><strong>CRUCIFIXO INCLINADO</strong></button>
+            <button class="meubotao" onclick=" pkdk()"><strong>PACKDECK</strong></button>
+            <button class="meubotao" onclick=" prll()"><strong>PARALELA</strong></button>
+            <button class="meubotao" onclick=" trifran()"><strong>TRICEPS FRANCES</strong></button>
+            <button class="meubotao" onclick=" tripcord()"><strong>TRICEPS CORDA</strong></button>
+
+        </div>
+        
+
+    </aside>
+    <section id="descriçãodetreino">
+
+         <!-- DESCRIÇÃO TREINO PERNA -->
+    <div id="descperna" style="display: none ;">
+        <div class="txt" id="descagchlv" style="display: none;">
+        <h1 class="desch1">3 series</h1>
+        <p>1° 8 rep<br>2° 10 rep<br>3° 12 rep <br><br><br> regressão de carga 1</p>
+        </div>
+       <div class="txt" id="descelevpelvc" style="display:none ;">
+        <h1 class="desch1">3 series</h1>
+        <p>1° 8 rep<br>2° 10 rep<br>3° 12 rep <br><br><br> regressão de carga 2</p>
+       </div>
+       <div class="txt" id="desclegpress" style="display:none ;">
+        <h1 class="desch1">3 series</h1>
+        <p>1° 8 rep<br>2° 10 rep<br>3° 12 rep <br><br><br> regressão de carga 3</p>
+       </div>
+       <div class="txt" id="descagchafundsmt" style="display:none ;">
+        <h1 class="desch1">3 series</h1>
+        <p>1° 8 rep<br>2° 10 rep<br>3° 12 rep <br><br><br> regressão de carga 4</p>
+       </div>
+       <div class="txt" id="desccdrextns" style="display:none ;">
+        <h1 class="desch1">3 series</h1>
+        <p>1° 8 rep<br>2° 10 rep<br>3° 12 rep <br><br><br> regressão de carga 5</p>
+       </div>
+       <div class="txt" id="deschckmch" style="display:none ;">
+        <h1 class="desch1">3 series</h1>
+        <p>1° 8 rep<br>2° 10 rep<br>3° 12 rep <br><br><br> regressão de carga 6</p>
+       </div>
+       <div class="txt" id="descpantu" style="display:none ;">
+        <h1 class="desch1">4 series</h1>
+        <p>1° 10 rep<br>2° 12 rep<br>3° 14 rep<br>4° 16 rep <br><br><br>progressão de carga 7</p>
+       </div>
+       <div class="txt" id="descaduto" style="display:none ;">
+        <h1 class="desch1">3 series</h1>
+        <p>1° 8 rep<br>2° 10 rep<br>3° 12 rep <br><br><br> regressão de carga 8</p>
+       </div>
+       <div class="txt" id="descabduto" style="display:none ;">
+        <h1 class="desch1">3 series</h1>
+        <p>1° 8 rep<br>2° 10 rep<br>3° 12 rep <br><br><br> regressão de carga 9</p>
+       </div>
+    </div>
+    
+     <!-- DESCRIÇÃO TREINO OMBRO -->
+     <div id="descombro" style="display:none ;">
+        <div class="txt" id="descremdesv" style="display:none ;">
+            <p>serie 3 x 3<br>1° 3 series de 6 rep<br>2° 3 series de 8 rep<br>3° 3 series de 10 rep<br><br><br> regressão de carga </p>
+        </div>
+        <div class="txt" id="descelevlat" style="display: none;">
+            <p>4 series<br>10 rep </p>
+        </div>
+        <div class="txt" id="descelevfront" style="display: none;">
+            <p>4 series<br>10 rep </p>
+        </div>
+        <div class="txt" id="descpostbanc" style="display: none;">
+            <p>4 series<br>10 rep </p>
+        </div>
+        <div class="txt" id="descpostpkdk" style="display:none ;">
+            <p>4 series<br>1° 10 rep<br>2° 12 rep<br>3° 14 rep<br>4° 16 rep <br><br><br>progressão de carga  </p>
+        </div>
+
+     </div>
+
+      <!-- DESCRIÇÃO TREINO BICPS/COSTAS -->
+    
+<div id="descbicpcost" style="display: none;">
+     <div  class="txt" id="descroscadirtbrr" style="display: none;">
+        <h1 class="desch1">3 series</h1>
+        <p>1° 8 rep<br>2° 10 rep<br>3° 12 rep <br><br>regressão de carga </p>
+     </div>
+     
+    <div class="txt" id="descroscamartbrr" style="display: none;">
+        <h1 class="desch1">3 series</h1>
+        <p>1° 8 rep<br>2° 10 rep<br>3° 12 rep <br><br><br>regressão de carga </p>
+    </div>
+
+    <div class="txt" id="descroscaalthalt" style="display: none;">
+        <h1 class="desch1">3 series</h1>
+        <p>1° 8 rep<br>2° 10 rep<br>3° 12 rep <br><br><br> regressão de carga </p>
+    </div>
+
+    <div class="txt" id="descroscamarthalt" style="display: none;">
+        <h1 class="desch1">3 series</h1>
+        <p>1° 8 rep<br>2° 10 rep<br>3° 12 rep <br><br><br> regressão de carga </p>
+    </div>
+
+    <div class="txt" id="descremadcav" style="display: none;">
+        <h1 class="desch1">3 series</h1>
+        <p>1° 8 rep<br>2° 10 rep<br>3° 12 rep <br><br><br> regressão de carga </p>
+    </div>
+
+    <div class="txt" id="descremadaart" style="display: none;">
+        <h1 class="desch1">3 series</h1>
+        <p>1° 8 rep<br>2° 10 rep<br>3° 12 rep <br><br><br> regressão de carga </p>
+    </div>
+
+    <div class="txt" id="descpuxdfrt" style="display: none;">
+        <h1 class="desch1">3 series</h1>
+        <p>1° 8 rep<br>2° 10 rep<br>3° 12 rep <br><br><br> regressão de carga </p>
+    </div>
+
+    <div class="txt" id="descremadcurv" style="display: none;">
+        <h1 class="desch1">3 series</h1>
+        <p>1° 8 rep<br>2° 10 rep<br>3° 12 rep <br><br><br> regressão de carga </p>
+    </div>
+</div>
+
+    <!-- DESCRIÇÃO TREINO PEITO/TRICPS -->
+<div id="descpeitotricps" style="display: none;">
+    <div class="txt" id="descsupret" style="display: none;">
+        <h1 class="desch1">3 series</h1>
+        <p>1° 8 rep<br>2° 10 rep<br>3° 12 rep <br><br><br> regressão de carga </p>
+    </div>
+    <div class="txt" id="desccrux" style="display: none;">
+        <h1 class="desch1">3 series</h1>
+        <p>1° 8 rep<br>2° 10 rep<br>3° 12 rep <br><br><br> regressão de carga </p>
+    </div>
+    <div class="txt" id="descsupinc" style="display: none;">
+        <h1 class="desch1">3 series</h1>
+        <p>1° 8 rep<br>2° 10 rep<br>3° 12 rep <br><br><br>regressão de carga </p>
+    </div>
+    <div class="txt" id="desccruxinc" style="display: none;">
+        <h1 class="desch1">3 series</h1>
+        <p>1° 8 rep<br>2° 10 rep<br>3° 12 rep <br><br><br> regressão de carga </p>
+    </div>
+    <div class="txt" id="descpkdk" style="display: none;">
+        <h1 class="desch1">3 series</h1>
+        <p>1° 3 series de 6 rep<br>2° 3 series de 8 rep<br>3° 3 series de 10 rep<br><br><br> regressão de carga </p>
+    </div>
+    <div class="txt" id="descprll" style="display: none;">
+        <h1 class="desch1">3 series</h1>
+        <p>10 rep </p>
+    </div>
+    <div class="txt" id="desctrifran" style="display: none;">
+        <h1 class="desch1">4 series</h1>
+        <p>1° 10 rep<br>2° 12 rep<br>3° 14 rep<br>4° 16 rep <br><br><br>progressão de carga  </p>
+    </div>
+    <div class="txt" id="desctripcord" style="display: none;">
+        <h1 class="desch1">4 series</h1>
+        <p>1° 10 rep<br>2° 12 rep<br>3° 14 rep<br>4° 16 rep <br><br><br>progressão de carga  </p>
+    </div>
+    
+    
+</div>
+<!-- GIFS BICEPS/COSTA -->
+<div id="gifBC" style="display:none ;">
+<div class="gif" id="descroscadirtbrrGIF" style="display: none;"> <img src="img/roscadrt.gif" alt=""></div>
+<div class="gif" id="descroscamartbrrGIF" style="display: none;"> <img src="img/rosca-inversa-barra-w.gif" alt=""></div>
+<div class="gif" id="roscaalternGIF" style="display: none;"> <img src="img/roscaalternhalter.webp" alt=""></div>
+<div class="gif" id="roscamartalterGIF" style="display: none;"> <img src="img/rosca martelo altern.gif" alt=""></div>
+</div>
+    </section>
+</div>
+    <footer>
+
+    </footer>
+    <script>
+        function perna(){
+            document.getElementById("Lperna").style.display = "block";
+            document.getElementById("Lombro").style.display = "none";
+            document.getElementById("gifBC").style.display = "none";
+            document.getElementById("Lbicpscosta").style.display = "none";
+            document.getElementById("Lpeitotricp").style.display = "none";
+            document.getElementById("descpeitotricps").style.display = "none";
+            document.getElementById("descbicpcost").style.display = "none";
+            document.getElementById("descombro").style.display = "none";
+            document.getElementById("descperna").style.display = "block";
+            document.getElementById("descagchafundsmt").style.display = "none";
+            document.getElementById("descelevpelvc").style.display = "none";
+            document.getElementById("descagchlv").style.display = "none";
+            document.getElementById("desclegpress").style.display = "none";
+            document.getElementById("desccdrextns").style.display = "none";
+            document.getElementById("deschckmch").style.display = "none";
+            document.getElementById("descpantu").style.display = "none";
+            document.getElementById("descaduto").style.display = "none";
+            document.getElementById("descabduto").style.display = "none";
+        }
+        function agchlv(){
+            document.getElementById("descagchlv").style.display = "block";
+            document.getElementById("descelevpelvc").style.display = "none";
+            document.getElementById("desclegpress").style.display = "none";
+            document.getElementById("descagchafundsmt").style.display = "none";
+            document.getElementById("desccdrextns").style.display = "none";
+            document.getElementById("deschckmch").style.display = "none";
+            document.getElementById("descpantu").style.display = "none";
+            document.getElementById("descaduto").style.display = "none";
+            document.getElementById("descabduto").style.display = "none";
+        }
+        function elevpelc(){
+            document.getElementById("descelevpelvc").style.display = "block";
+            document.getElementById("descagchlv").style.display = "none";
+            document.getElementById("desclegpress").style.display = "none";
+            document.getElementById("descagchafundsmt").style.display = "none";
+            document.getElementById("desccdrextns").style.display = "none";
+            document.getElementById("deschckmch").style.display = "none";
+            document.getElementById("descpantu").style.display = "none";
+            document.getElementById("descaduto").style.display = "none";
+            document.getElementById("descabduto").style.display = "none";
+        }
+        function legpress(){
+            document.getElementById("desclegpress").style.display = "block";
+            document.getElementById("descelevpelvc").style.display = "none";
+            document.getElementById("descagchlv").style.display = "none";
+            document.getElementById("descagchafundsmt").style.display = "none";
+            document.getElementById("desccdrextns").style.display = "none";
+            document.getElementById("deschckmch").style.display = "none";
+            document.getElementById("descpantu").style.display = "none";
+            document.getElementById("descaduto").style.display = "none";
+            document.getElementById("descabduto").style.display = "none";
+        }
+        function agchafundsmt(){
+            document.getElementById("descagchafundsmt").style.display = "block";
+            document.getElementById("descelevpelvc").style.display = "none";
+            document.getElementById("descagchlv").style.display = "none";
+            document.getElementById("desclegpress").style.display = "none";
+            document.getElementById("desccdrextns").style.display = "none";
+            document.getElementById("deschckmch").style.display = "none";
+            document.getElementById("descpantu").style.display = "none";
+            document.getElementById("descaduto").style.display = "none";
+            document.getElementById("descabduto").style.display = "none";
+        }
+        function cdrextns(){
+            document.getElementById("desccdrextns").style.display = "block";
+            document.getElementById("descagchafundsmt").style.display = "none";
+            document.getElementById("descelevpelvc").style.display = "none";
+            document.getElementById("descagchlv").style.display = "none";
+            document.getElementById("desclegpress").style.display = "none";
+            document.getElementById("deschckmch").style.display = "none";
+            document.getElementById("descpantu").style.display = "none";
+            document.getElementById("descaduto").style.display = "none";
+            document.getElementById("descabduto").style.display = "none";
+        }
+        function hckmch(){
+            document.getElementById("deschckmch").style.display = "block";
+            document.getElementById("descagchafundsmt").style.display = "none";
+            document.getElementById("descelevpelvc").style.display = "none";
+            document.getElementById("descagchlv").style.display = "none";
+            document.getElementById("desclegpress").style.display = "none";
+            document.getElementById("desccdrextns").style.display = "none";
+            document.getElementById("descpantu").style.display = "none";
+            document.getElementById("descaduto").style.display = "none";
+            document.getElementById("descabduto").style.display = "none";
+        }
+        function pantu(){
+            document.getElementById("descpantu").style.display = "block";
+            document.getElementById("descagchafundsmt").style.display = "none";
+            document.getElementById("descelevpelvc").style.display = "none";
+            document.getElementById("descagchlv").style.display = "none";
+            document.getElementById("desclegpress").style.display = "none";
+            document.getElementById("desccdrextns").style.display = "none";
+            document.getElementById("deschckmch").style.display = "none";
+            document.getElementById("descaduto").style.display = "none";
+            document.getElementById("descabduto").style.display = "none";
+        }
+        function aduto(){
+            document.getElementById("descaduto").style.display = "block";
+            document.getElementById("descagchafundsmt").style.display = "none";
+            document.getElementById("descelevpelvc").style.display = "none";
+            document.getElementById("descagchlv").style.display = "none";
+            document.getElementById("desclegpress").style.display = "none";
+            document.getElementById("desccdrextns").style.display = "none";
+            document.getElementById("deschckmch").style.display = "none";
+            document.getElementById("descpantu").style.display = "none";
+            document.getElementById("descabduto").style.display = "none";
+            }
+        function abduto(){
+            document.getElementById("descabduto").style.display = "block";
+            document.getElementById("descagchafundsmt").style.display = "none";
+            document.getElementById("descelevpelvc").style.display = "none";
+            document.getElementById("descagchlv").style.display = "none";
+            document.getElementById("desclegpress").style.display = "none";
+            document.getElementById("desccdrextns").style.display = "none";
+            document.getElementById("deschckmch").style.display = "none";
+            document.getElementById("descpantu").style.display = "none";
+            document.getElementById("descaduto").style.display = "none";
+        }
+        function Ombro(){
+            document.getElementById("Lombro").style.display = "block";
+            document.getElementById("gifBC").style.display = "none";
+            document.getElementById("Lbicpscosta").style.display = "none";
+            document.getElementById("descbicpcost").style.display = "none";
+            document.getElementById("Lpeitotricp").style.display = "none";
+            document.getElementById("descpeitotricps").style.display = "none";
+            document.getElementById("descombro").style.display = "block";
+            document.getElementById("Lperna").style.display = "none";
+            document.getElementById("descperna").style.display = "none";
+            document.getElementById("descpostpkdk").style.display = "none";
+            document.getElementById("descremdesv").style.display = "none    ";
+            document.getElementById("descelevlat").style.display = "none";
+            document.getElementById("descpostbanc").style.display = "none";
+            document.getElementById("descelevfront").style.display = "none";
+            
+         
+        }
+        function remdesv(){
+            document.getElementById("descremdesv").style.display = "block";
+            document.getElementById("descelevlat").style.display = "none";
+            document.getElementById("descelevfront").style.display = "none";
+            document.getElementById("descpostbanc").style.display = "none";
+            document.getElementById("descpostpkdk").style.display = "none";
+        }
+        function elevlat(){
+            document.getElementById("descelevlat").style.display = "block";
+            document.getElementById("descremdesv").style.display = "none    ";
+            document.getElementById("descelevfront").style.display = "none";
+            document.getElementById("descpostbanc").style.display = "none";
+            document.getElementById("descpostpkdk").style.display = "none";
+        }
+        function elevfront(){
+            document.getElementById("descelevfront").style.display = "block";
+            document.getElementById("descremdesv").style.display = "none    ";
+            document.getElementById("descelevlat").style.display = "none";
+            document.getElementById("descpostbanc").style.display = "none";
+            document.getElementById("descpostpkdk").style.display = "none";
+        }
+        function postbanc(){
+            document.getElementById("descpostbanc").style.display = "block";
+            document.getElementById("descremdesv").style.display = "none    ";
+            document.getElementById("descelevlat").style.display = "none";
+            document.getElementById("descpostpkdk").style.display = "none";
+            document.getElementById("descelevfront").style.display = "none";
+        }
+        function postpkdk(){
+            document.getElementById("descpostpkdk").style.display = "block";
+            document.getElementById("descremdesv").style.display = "none    ";
+            document.getElementById("descelevlat").style.display = "none";
+            document.getElementById("descpostbanc").style.display = "none";
+            document.getElementById("descelevfront").style.display = "none";
+        }
+        function BicpsCostas(){
+            document.getElementById("descroscadirtbrrGIF").style.display = "none";
+            document.getElementById("descroscamartbrrGIF").style.display = "none";
+            document.getElementById("roscaalternGIF").style.display = "none";
+            document.getElementById("gifBC").style.display = "block";
+            document.getElementById("Lbicpscosta").style.display = "block";
+            document.getElementById("descbicpcost").style.display = "block";
+            document.getElementById("Lpeitotricp").style.display = "none";
+            document.getElementById("descpeitotricps").style.display = "none";
+            document.getElementById("Lombro").style.display = "none";
+            document.getElementById("Lperna").style.display = "none";
+            document.getElementById("descombro").style.display = "none";
+            document.getElementById("descperna").style.display = "none";
+            document.getElementById("descroscadirtbrr").style.display = "none";
+            document.getElementById("descroscamartbrr").style.display = "none";
+            document.getElementById("descroscaalthalt").style.display = "none";
+            document.getElementById("descroscamarthalt").style.display = "none";
+            document.getElementById("descremadcav").style.display = "none";
+            document.getElementById("descremadaart").style.display = "none";
+            document.getElementById("descpuxdfrt").style.display = "none";
+            document.getElementById("descremadcurv").style.display = "none";
+        }
+        function roscadirtbrr() {
+            document.getElementById("roscamartalterGIF").style.display = "none";
+            document.getElementById("roscaalternGIF").style.display = "none";
+            document.getElementById("descroscamartbrrGIF").style.display = "none";
+            document.getElementById("descroscadirtbrr").style.display = "block";
+            document.getElementById("descroscadirtbrrGIF").style.display = "block";
+            document.getElementById("descroscamartbrr").style.display = "none";
+            document.getElementById("descroscaalthalt").style.display = "none";
+            document.getElementById("descroscamarthalt").style.display = "none";
+            document.getElementById("descremadcav").style.display = "none";
+            document.getElementById("descremadaart").style.display = "none";
+            document.getElementById("descpuxdfrt").style.display = "none";
+            document.getElementById("descremadcurv").style.display = "none";
+
+        }
+
+        function roscamartbrr() {
+            document.getElementById("roscamartalterGIF").style.display = "none";
+            document.getElementById("roscaalternGIF").style.display = "none";
+            document.getElementById("descroscadirtbrrGIF").style.display = "none";
+            document.getElementById("descroscamartbrrGIF").style.display = "block";
+            document.getElementById("descroscamartbrr").style.display = "block";
+            document.getElementById("descroscadirtbrr").style.display = "none";
+            document.getElementById("descroscaalthalt").style.display = "none";
+            document.getElementById("descroscamarthalt").style.display = "none";
+            document.getElementById("descremadcav").style.display = "none";
+            document.getElementById("descremadaart").style.display = "none";
+            document.getElementById("descpuxdfrt").style.display = "none";
+            document.getElementById("descremadcurv").style.display = "none";
+        }
+
+        function roscaalthalt() {
+            document.getElementById("roscamartalterGIF").style.display = "none";
+            document.getElementById("descroscadirtbrrGIF").style.display = "none";
+            document.getElementById("descroscamartbrrGIF").style.display = "none";
+            document.getElementById("roscaalternGIF").style.display = "block";
+            document.getElementById("descroscaalthalt").style.display = "block";
+            document.getElementById("descroscadirtbrr").style.display = "none";
+            document.getElementById("descroscamartbrr").style.display = "none";
+            document.getElementById("descroscamarthalt").style.display = "none";
+            document.getElementById("descremadcav").style.display = "none";
+            document.getElementById("descremadaart").style.display = "none";
+            document.getElementById("descpuxdfrt").style.display = "none";
+            document.getElementById("descremadcurv").style.display = "none";
+        }
+
+        function roscamarthalt() {
+            document.getElementById("descroscadirtbrrGIF").style.display = "none";
+            document.getElementById("descroscamartbrrGIF").style.display = "none";
+            document.getElementById("roscaalternGIF").style.display = "none";
+            document.getElementById("roscamartalterGIF").style.display = "block";
+            document.getElementById("descroscamarthalt").style.display = "block";
+            document.getElementById("descroscadirtbrr").style.display = "none";
+            document.getElementById("descroscamartbrr").style.display = "none";
+            document.getElementById("descroscaalthalt").style.display = "none";
+            document.getElementById("descremadcav").style.display = "none";
+            document.getElementById("descremadaart").style.display = "none";
+            document.getElementById("descpuxdfrt").style.display = "none";
+            document.getElementById("descremadcurv").style.display = "none";
+        }
+
+        function remadcav() {
+            document.getElementById("descremadcav").style.display = "block";
+            document.getElementById("descroscadirtbrr").style.display = "none";
+            document.getElementById("descroscamartbrr").style.display = "none";
+            document.getElementById("descroscaalthalt").style.display = "none";
+            document.getElementById("descroscamarthalt").style.display = "none";
+            document.getElementById("descremadaart").style.display = "none";
+            document.getElementById("descpuxdfrt").style.display = "none";
+            document.getElementById("descremadcurv").style.display = "none";
+        }
+
+        function remadaart() {
+            document.getElementById("descremadaart").style.display = "block";
+            document.getElementById("descroscadirtbrr").style.display = "none";
+            document.getElementById("descroscamartbrr").style.display = "none";
+            document.getElementById("descroscaalthalt").style.display = "none";
+            document.getElementById("descroscamarthalt").style.display = "none";
+            document.getElementById("descremadcav").style.display = "none";
+            document.getElementById("descpuxdfrt").style.display = "none";
+            document.getElementById("descremadcurv").style.display = "none";
+        }
+
+        function puxdfrt() {
+            document.getElementById("descpuxdfrt").style.display = "block";
+            document.getElementById("descroscadirtbrr").style.display = "none";
+            document.getElementById("descroscamartbrr").style.display = "none";
+            document.getElementById("descroscaalthalt").style.display = "none";
+            document.getElementById("descroscamarthalt").style.display = "none";
+            document.getElementById("descremadcav").style.display = "none";
+            document.getElementById("descremadaart").style.display = "none";
+            document.getElementById("descremadcurv").style.display = "none";
+        }
+
+        function remadcurv() {
+            document.getElementById("descremadcurv").style.display = "block";
+            document.getElementById("descroscadirtbrr").style.display = "none";
+            document.getElementById("descroscamartbrr").style.display = "none";
+            document.getElementById("descroscaalthalt").style.display = "none";
+            document.getElementById("descroscamarthalt").style.display = "none";
+            document.getElementById("descremadcav").style.display = "none";
+            document.getElementById("descremadaart").style.display = "none";
+            document.getElementById("descpuxdfrt").style.display = "none";
+        }
+
+
+        function PeitoTricp(){
+            
+            document.getElementById("Lpeitotricp").style.display = "block";
+            document.getElementById("descpeitotricps").style.display = "block";
+            document.getElementById("gifBC").style.display = "none";
+            document.getElementById("Lombro").style.display = "none";
+            document.getElementById("Lperna").style.display = "none";
+            document.getElementById("Lbicpscosta").style.display = "none";
+            document.getElementById("descbicpcost").style.display = "none";
+            document.getElementById("descombro").style.display = "none";
+            document.getElementById("descperna").style.display = "none";
+            document.getElementById("descsupret").style.display = "none";
+            document.getElementById("desccrux").style.display = "none";
+            document.getElementById("descsupinc").style.display = "none";
+            document.getElementById("desccruxinc").style.display = "none";
+            document.getElementById("descpkdk").style.display = "none";
+            document.getElementById("descprll").style.display = "none";
+            document.getElementById("desctrifran").style.display = "none";
+            document.getElementById("desctripcord").style.display = "none";
+            
+        }
+        function supret() {
+            document.getElementById("descsupret").style.display = "block";
+            document.getElementById("desccrux").style.display = "none";
+            document.getElementById("descsupinc").style.display = "none";
+            document.getElementById("desccruxinc").style.display = "none";
+            document.getElementById("descpkdk").style.display = "none";
+            document.getElementById("descprll").style.display = "none";
+            document.getElementById("desctrifran").style.display = "none";
+            document.getElementById("desctripcord").style.display = "none";
+
+        }
+
+        function crux() {
+            document.getElementById("desccrux").style.display = "block";
+            document.getElementById("descsupret").style.display = "none";
+            document.getElementById("descsupinc").style.display = "none";
+            document.getElementById("desccruxinc").style.display = "none";
+            document.getElementById("descpkdk").style.display = "none";
+            document.getElementById("descprll").style.display = "none";
+            document.getElementById("desctrifran").style.display = "none";
+            document.getElementById("desctripcord").style.display = "none";
+            
+        }
+
+        function supinc() {
+            document.getElementById("descsupinc").style.display = "block";
+            document.getElementById("descsupret").style.display = "none";
+            document.getElementById("desccrux").style.display = "none";
+            document.getElementById("desccruxinc").style.display = "none";
+            document.getElementById("descpkdk").style.display = "none";
+            document.getElementById("descprll").style.display = "none";
+            document.getElementById("desctrifran").style.display = "none";
+            document.getElementById("desctripcord").style.display = "none";
+        }
+
+        function cruxinc() {
+            document.getElementById("desccruxinc").style.display = "block";
+            document.getElementById("descsupret").style.display = "none";
+            document.getElementById("desccrux").style.display = "none";
+            document.getElementById("descsupinc").style.display = "none";
+            document.getElementById("descpkdk").style.display = "none";
+            document.getElementById("descprll").style.display = "none";
+            document.getElementById("desctrifran").style.display = "none";
+            document.getElementById("desctripcord").style.display = "none";
+        }
+
+        function pkdk() {
+            document.getElementById("descpkdk").style.display = "block";
+            document.getElementById("descsupret").style.display = "none";
+            document.getElementById("desccrux").style.display = "none";
+            document.getElementById("descsupinc").style.display = "none";
+            document.getElementById("desccruxinc").style.display = "none";
+            document.getElementById("descprll").style.display = "none";
+            document.getElementById("desctrifran").style.display = "none";
+            document.getElementById("desctripcord").style.display = "none";
+        }
+
+        function prll() {
+            document.getElementById("descprll").style.display = "block";
+            document.getElementById("descsupret").style.display = "none";
+            document.getElementById("desccrux").style.display = "none";
+            document.getElementById("descsupinc").style.display = "none";
+            document.getElementById("desccruxinc").style.display = "none";
+            document.getElementById("descpkdk").style.display = "none";
+            document.getElementById("desctrifran").style.display = "none";
+            document.getElementById("desctripcord").style.display = "none";
+        }
+
+        function trifran() {
+            document.getElementById("desctrifran").style.display = "block";
+            document.getElementById("descsupret").style.display = "none";
+            document.getElementById("desccrux").style.display = "none";
+            document.getElementById("descsupinc").style.display = "none";
+            document.getElementById("desccruxinc").style.display = "none";
+            document.getElementById("descpkdk").style.display = "none";
+            document.getElementById("descprll").style.display = "none";
+            document.getElementById("desctripcord").style.display = "none";
+        }
+
+        function tripcord() {
+            document.getElementById("desctripcord").style.display = "block";
+            document.getElementById("descsupret").style.display = "none";
+            document.getElementById("desccrux").style.display = "none";
+            document.getElementById("descsupinc").style.display = "none";
+            document.getElementById("desccruxinc").style.display = "none";
+            document.getElementById("descpkdk").style.display = "none";
+            document.getElementById("descprll").style.display = "none";
+            document.getElementById("desctrifran").style.display = "none";
+        }
+
+
+
+    </script>
+</body>
+</html>
